@@ -54,7 +54,7 @@ function makeProdCard(prodData) {
   image.innerHTML = `<img src = "${prodData.imgSource}">`;
   title.innerHTML = prodData.title;
   price.innerHTML = `$${prodData.price} (USD)`;
-  addCartBtn.innerHTML = `<img src = "Pictures/BagIconPlus.png">`;
+  addCartBtn.innerHTML = `<img src = "./Pictures/BagIconPlus.png">`;
 
   // Append the prodCard to prodSection
   prodSection.appendChild(prodCard);
