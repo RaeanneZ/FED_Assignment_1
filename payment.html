@@ -11,12 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;700&family=Yeseva+One&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="Normalize.css" />
     <link rel="stylesheet" href="style.css" />
-    <title>Melissa Coppel Chocolatier</title>
+    <script src="displayBag.js" defer></script>
+    <title>Payment</title>
   </head>
   <body>
     <nav id="navbar">
-      <a href="#" class="logo">
+      <a href="index.html" class="logo">
         <h1>Melissa Coppel</h1>
         <small>Chocolatier</small>
       </a>
@@ -27,66 +29,104 @@
 
       <div class="navLinks">
         <a href="bonbons.html">Bon Bons</a>
-        <a href="#">Cakes</a>
-        <a href="#">Pastries</a>
+        <a href="#">Events</a>
         <a href="#">About</a>
+      </div>
+
+      <div class="icons">
+        <div class="shoppingIconContainer">
+          <i id="shoppingBagIcon" class="fa-solid fa-bag-shopping"></i>
+          <span id="bagNotifier"></span>
+        </div>
       </div>
     </nav>
 
+    <section class="pop-up">
+      <h3 class="bag">Bag</h3>
+      <ul class="popUpList"></ul>
+      <a href="payment.html"><button class="review-btn">Review Bag</button></a>
+    </section>
+
     <section id="banner">
       <div class="landingBanner">
-        <img src="Pictures/MainPic2.JPG" alt="" class="darken-img" />
-      </div>
-
-      <div class="captionCta">
-        <h2>Handmade sweets to satisfy your cravings</h2>
-        <button type="button"><a href="#">Learn More</a></button>
+        <img src="Pictures/MelissaCoppelBag.jpg" alt="" class="darken-img" />
       </div>
     </section>
 
-    <section class="philoBanner-container">
-      <div>
-        <img
-          src="https://lh3.googleusercontent.com/p/AF1QipNRV0Nw8x3RvpwPBe_dMy6CS-Sf5P3Ya6tDuU_D=s1360-w1360-h1020"
-          alt=""
-          class="darken-img"
-        />
-      </div>
-      <div class="center-right">
-        <div class="text">
-          <span>Our Philosophy</span><br />Knowledge doesn't belong to you, it
-          passes through you
+    <!-- Form to fill up -->
+    <section class="customerPaymentInfo">
+      <section class="contactForm">
+        <h3>Contact</h3>
+        <input type="email" name="Email" id="Email" placeholder="Email" />
+      </section>
+
+      <section class="deliveryForm">
+        <h3>Delivery</h3>
+
+        <!-- Dropdown Menu -->
+        <label for="residingCountry"></label>
+        <select name="residingCountry" id="residingCountry">
+          <option value="us">United States</option>
+        </select>
+        <!-- End of Dropdown Menu -->
+        <div class="nameInfo">
+          <input type="text" name="fname" id="fname" placeholder="First Name" />
+          <input type="text" name="lname" id="lname" placeholder="Last Name" />
         </div>
-      </div>
-    </section>
 
-    <section class="aboutMC">
-      <!-- Image Container -->
-      <div class="MC-profileContainer">
-        <img
-          src="https://i0.wp.com/pastryartsmag.com/wp-content/uploads/2019/10/Coppel3089.jpg?ssl=1"
-          alt=""
-          class="MC-img"
+        <input type="text" name="addr" id="addr" placeholder="Address" />
+
+        <div class="otherInfo">
+          <input
+            type="text"
+            name="postalCode"
+            id="postalCode"
+            placeholder="Postal Code"
+          />
+          <input
+            type="text"
+            name="phoneNo"
+            id="phoneNo"
+            placeholder="Phone Number"
+          />
+        </div>
+      </section>
+
+      <section class="paymentForm">
+        <h3>Payment</h3>
+        <input
+          type="text"
+          name="cardNo"
+          id="cardNo"
+          placeholder="Card Number"
         />
-      </div>
 
-      <!-- Image Description Container -->
-      <div class="MC-desc">
-        <h2>About Melissa Coppel</h2>
-        <p>
-          World-renowned Chocolatier, Melissa Coppel, left her home in Cali,
-          Colombia to study pastry in Argentina before moving to Chicago to
-          attend The French Pastry School in 2006. One of the few women at the
-          top of her field, Coppel worked at Joel Robuchon at the Mansion, a
-          three-star Michelin restaurant and ran the pastry kitchen at
-          L&#39;Atelier de Joel Robuchon in Las Vegas.<br /><br />She later
-          mastered her talent with chocolate at casinos like Caesars Palace and
-          the Bellagio, where she exclusively focused on chocolate. She
-          co-founded a wholesale chocolate company in Las Vegas before starting
-          her own school in 2016.
-        </p>
-      </div>
+        <div class="expSec">
+          <input
+            type="date"
+            name="expDate"
+            id="expDate"
+            placeholder="Expiration Date"
+          />
+          <input
+            type="text"
+            name="secCode"
+            id="secCode"
+            placeholder="Security Code"
+          />
+        </div>
+
+        <input
+          type="text"
+          name="cardName"
+          id="cardName"
+          placeholder="Name on Card"
+        />
+      </section>
+
+      <button class="paymentBtn" type="submit">Pay Now</button>
     </section>
+    <!-- End of Form to fill up -->
 
     <footer class="footer">
       <!-- First Section -->
@@ -120,9 +160,8 @@
           <div class="footer-col">
             <h4>Site Map</h4>
             <ul>
-              <li><a href="bonbons.html">Bon Bons</a></li>
-              <li><a href="#">Cakes</a></li>
-              <li><a href="#">Pastries</a></li>
+              <li><a href="#">Bon Bons</a></li>
+              <li><a href="#">Events</a></li>
               <li><a href="#">About Us</a></li>
             </ul>
           </div>
