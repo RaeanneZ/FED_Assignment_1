@@ -1,0 +1,74 @@
+/* Payment Form ======================================================================================================================================================== */
+.customerPaymentInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactForm,
+.deliveryForm,
+.paymentForm {
+  width: 40%;
+  height: auto;
+  margin: 2em;
+}
+
+.customerPaymentInfo h3 {
+  font-size: 2em;
+}
+
+.customerPaymentInfo input,
+.customerPaymentInfo select {
+  padding: 0.6em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  width: 49%;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.3em;
+  border-color: var(--logo-color);
+  background-color: var(--body-color);
+  border-radius: 10px;
+}
+
+.contactForm input,
+.deliveryForm #residingCountry,
+.deliveryForm #addr,
+.paymentForm #cardNo,
+.paymentForm #cardName {
+  width: 100%;
+}
+
+.deliveryForm .nameInfo,
+.deliveryForm .otherInfo,
+.paymentForm .expSec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.paymentBtn {
+  width: 45%;
+  background-color: #8c182d;
+  color: #ffffff;
+  font-family: "Yeseva One", serif;
+  padding: 1.2em 2em;
+  margin: 1.5em;
+  border-radius: 15px;
+  border-style: none;
+  stroke: none;
+}
+
+/* Responsivity ======================================================================================================================================================== */
+
+@media (max-width: 590px) {
+  .contactForm,
+  .deliveryForm,
+  .paymentForm,
+  .paymentBtn {
+    width: 90%;
+  }
+}

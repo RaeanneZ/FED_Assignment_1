@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="Normalize.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
     <script src="displayBag.js" defer></script>
     <title>Melissa Coppel Chocolatier</title>
   </head>
@@ -29,8 +30,7 @@
 
       <div class="navLinks">
         <a href="bonbons.html">Bon Bons</a>
-        <a href="#">Events</a>
-        <a href="#">About</a>
+        <a href="about.html">About</a>
       </div>
 
       <div class="icons">
@@ -54,23 +54,17 @@
 
       <div class="captionCta">
         <h2>Handmade sweets to satisfy your cravings</h2>
-        <button type="button"><a href="#">Learn More</a></button>
+        <button type="button"><a href="bonbons.html">Learn More</a></button>
       </div>
     </section>
 
-    <section class="philoBanner-container">
+    <section class="testiomonial-container">
       <div>
-        <img
-          src="https://lh3.googleusercontent.com/p/AF1QipNRV0Nw8x3RvpwPBe_dMy6CS-Sf5P3Ya6tDuU_D=s1360-w1360-h1020"
-          alt=""
-          class="darken-img"
-        />
+        <img src="Pictures/quotationBg.png" alt="" class="quotationBg" />
       </div>
-      <div class="center-right">
-        <div class="text">
-          <span>Our Philosophy</span><br />Knowledge doesn't belong to you, it
-          passes through you
-        </div>
+      <div class="text">
+        These are chocolates made to be both admired and eaten - fast <br />
+        <img src="Pictures/newYorkTimesLogo.png" alt="" class="logoPhoto" />
       </div>
     </section>
 
@@ -101,6 +95,56 @@
         </p>
       </div>
     </section>
+
+    <!-- Sliding Carousel for testimonials -->
+    <section class="slidingCarousel">
+      <div class="list">
+        <div class="item">
+          <img src="Pictures/quotationBg.png" alt="" />
+          <p>
+            My team enjoyed the chocolates. The delivery was on time. Would
+            definitely come back again for more!
+          </p>
+          <small>- Ellyn</small>
+        </div>
+        <div class="item">
+          <img src="Pictures/quotationBg.png" alt="" />
+          <p>
+            Short notice to customize a box of bonbon flavors was well executed.
+          </p>
+          <small>- Clement Teo</small>
+        </div>
+        <div class="item">
+          <img src="Pictures/quotationBg.png" alt="" />
+          <p>Love the exotic flavors.</p>
+          <small>- Jenny</small>
+        </div>
+        <div class="item">
+          <img src="Pictures/quotationBg.png" alt="" />
+          <p>
+            New flavors every season is definitely a welcome. My go-to for any
+            occasions!
+          </p>
+          <small>- Susan Yeo</small>
+        </div>
+      </div>
+
+      <!-- Button prev and next -->
+      <div class="buttons">
+        <button id="prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+
+      <!-- Dots to show placement -->
+      <ul class="dots">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+    <!-- End of Sliding Carousel for testimonials -->
 
     <footer class="footer">
       <!-- First Section -->
@@ -135,8 +179,7 @@
             <h4>Site Map</h4>
             <ul>
               <li><a href="bonbons.html">Bon Bons</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">About Us</a></li>
+              <li><a href="about.html">About Us</a></li>
             </ul>
           </div>
 
@@ -146,9 +189,10 @@
             <h4>&#169; Melissa Coppel</h4>
             <ul>
               <li>
-                <a href="#">Professional workshop terms and agreements</a>
+                <a href="termsConditions.html"
+                  >Online order terms and agreement</a
+                >
               </li>
-              <li><a href="#">Online order terms and agreement</a></li>
             </ul>
           </div>
 

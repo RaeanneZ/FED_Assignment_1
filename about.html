@@ -13,9 +13,10 @@
     />
     <link rel="stylesheet" href="Normalize.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="payment.css" />
+    <link rel="stylesheet" href="about.css" />
     <script src="displayBag.js" defer></script>
-    <title>Payment</title>
+
+    <title>About Us</title>
   </head>
   <body>
     <nav id="navbar">
@@ -49,84 +50,43 @@
 
     <section id="banner">
       <div class="landingBanner">
-        <img src="Pictures/MelissaCoppelBag.jpg" alt="" class="darken-img" />
+        <img src="Pictures/MainPic2.JPG" alt="" class="darken-img" />
+      </div>
+
+      <div class="Title">
+        <h2>About Us</h2>
       </div>
     </section>
 
-    <!-- Form to fill up -->
-    <section class="customerPaymentInfo">
-      <section class="contactForm">
-        <h3>Contact</h3>
-        <input type="email" name="Email" id="Email" placeholder="Email" />
-      </section>
-
-      <section class="deliveryForm">
-        <h3>Delivery</h3>
-
-        <!-- Dropdown Menu -->
-        <label for="residingCountry"></label>
-        <select name="residingCountry" id="residingCountry">
-          <option value="us">United States</option>
-        </select>
-        <!-- End of Dropdown Menu -->
-        <div class="nameInfo">
-          <input type="text" name="fname" id="fname" placeholder="First Name" />
-          <input type="text" name="lname" id="lname" placeholder="Last Name" />
-        </div>
-
-        <input type="text" name="addr" id="addr" placeholder="Address" />
-
-        <div class="otherInfo">
-          <input
-            type="text"
-            name="postalCode"
-            id="postalCode"
-            placeholder="Postal Code"
-          />
-          <input
-            type="text"
-            name="phoneNo"
-            id="phoneNo"
-            placeholder="Phone Number"
-          />
-        </div>
-      </section>
-
-      <section class="paymentForm">
-        <h3>Payment</h3>
-        <input
-          type="text"
-          name="cardNo"
-          id="cardNo"
-          placeholder="Card Number"
-        />
-
-        <div class="expSec">
-          <input
-            type="date"
-            name="expDate"
-            id="expDate"
-            placeholder="Expiration Date"
-          />
-          <input
-            type="text"
-            name="secCode"
-            id="secCode"
-            placeholder="Security Code"
-          />
-        </div>
-
-        <input
-          type="text"
-          name="cardName"
-          id="cardName"
-          placeholder="Name on Card"
-        />
-      </section>
-
-      <button class="paymentBtn" type="submit">Pay Now</button>
+    <section class="chocolateStory">
+      <div class="cocoaImg">
+        <img src="Pictures/cocoaPic.png" alt="" class="aboutImg" />
+      </div>
+      <div class="desc">
+        <h3>Every chocolate tells a story</h3>
+        <p>
+          From stumbling on Iranian Saffron in Dubai Souk Market to sipping
+          passion fruit and jasmine tea in Hong Kong, she brings her travels,
+          memories and experiences home, folding them into the treats she shares
+          with you. Coppel extracts joy from transforming these raw ingredients
+          into edible art, so that chocolate can become something more.
+        </p>
+      </div>
     </section>
-    <!-- End of Form to fill up -->
+
+    <section class="flavourStory">
+      <div class="desc">
+        <h3>Unexpected Flavor Pairings</h3>
+        <p>
+          Our flavours are constantly inspired by everyday conversations and the
+          community around us and the myriad of flavours and ingredients found
+          around the region to create delicious chocolate treats.
+        </p>
+      </div>
+      <div class="bonbonImg">
+        <img src="Pictures/bonbonFlavourPic.png" alt="" class="aboutImg" />
+      </div>
+    </section>
 
     <footer class="footer">
       <!-- First Section -->

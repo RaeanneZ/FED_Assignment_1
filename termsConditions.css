@@ -1,0 +1,40 @@
+/* TermsConditions ===================================================================================================================================================== */
+.termsConditionInfo {
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Yeseva One", serif;
+  font-size: 0.8em;
+}
+
+.termsConditionInfo p {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 1.2em;
+}
+
+.termsConditionInfo .chocolateDetailContainer,
+.termsConditionInfo .shippingDetailContainer,
+.termsConditionInfo .cancellationDetailContainer {
+  margin: 1.6em;
+}
+
+.termsConditionInfo h1 {
+  margin-top: 2em;
+}
+
+.termsConditionInfo .cancellationDetailContainer {
+  margin-bottom: 2em;
+}
+
+/* Responsivity ======================================================================================================================================================== */
+
+@media (max-width: 425px) {
+  .termsConditionInfo {
+    width: 80%;
+  }
+}

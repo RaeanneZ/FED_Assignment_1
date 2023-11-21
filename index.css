@@ -1,0 +1,160 @@
+/* News Report Banner ================================================================================================================================================== */
+.testiomonial-container {
+  position: relative;
+  text-align: center;
+  color: #000000;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1em;
+  height: 234px;
+  margin-top: 4rem;
+}
+
+.testiomonial-container .quotationBg {
+  width: 100vw;
+  height: 234px;
+  object-fit: cover;
+  position: relative;
+}
+
+.testiomonial-container .logoPhoto {
+  width: 6em;
+  height: 3em;
+  object-fit: contain;
+  position: absolute;
+  right: 40px;
+}
+
+.testiomonial-container .text {
+  font-weight: bold;
+  text-align: left;
+  padding: 2vw; /* This will help to center text vertically */
+
+  /* All these are for aligning the text box on the image */
+  top: 15%;
+  left: 10%;
+  position: absolute;
+  display: block;
+  margin-top: 4px;
+}
+
+.testiomonial-container .text {
+  font-family: "Yeseva One", serif;
+  font-size: 1.7em;
+}
+
+/* MC Profile ========================================================================================================================================================== */
+.aboutMC {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 100px;
+}
+
+.MC-profileContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.MC-profileContainer .MC-img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.MC-desc {
+  width: 50%;
+  padding-left: 3vw;
+  font-family: "Josefin Sans", sans-serif;
+}
+.MC-desc h2 {
+  font-family: "Yeseva One", serif;
+  font-size: 30px;
+}
+.MC-desc p {
+  font-size: 20px;
+  padding-top: 50px;
+  justify-content: center;
+}
+
+/* Customers' review =================================================================================================================================================== */
+.slidingCarousel {
+  width: 100vw;
+  height: 100%;
+  position: relative;
+}
+
+.list {
+  display: flex;
+  width: max-content;
+}
+
+.list img {
+  width: 100vw;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+.list .item {
+  max-width: 100vw;
+}
+
+.buttons {
+  position: absolute;
+  top: 35%;
+  left: 3%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  width: 50px;
+  height: 100%;
+  background-color: var(--main-color-1);
+  border: none;
+  font-size: 3em;
+  color: var(--logo-color);
+}
+
+.dots {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.dots li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+/* Responsivity ======================================================================================================================================================== */
+
+@media (max-width: 839px) {
+  .aboutMC {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .MC-profileContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .MC-desc {
+    width: 100%;
+    padding-top: 2em;
+    padding-left: 10px;
+    font-family: "Josefin Sans", sans-serif;
+  }
+}

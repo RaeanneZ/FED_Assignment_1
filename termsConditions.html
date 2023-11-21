@@ -13,9 +13,10 @@
     />
     <link rel="stylesheet" href="Normalize.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="payment.css" />
+    <link rel="stylesheet" href="termsConditions.css" />
     <script src="displayBag.js" defer></script>
-    <title>Payment</title>
+
+    <title>Terms & Conditions</title>
   </head>
   <body>
     <nav id="navbar">
@@ -47,86 +48,37 @@
       <a href="payment.html"><button class="review-btn">Review Bag</button></a>
     </section>
 
-    <section id="banner">
-      <div class="landingBanner">
-        <img src="Pictures/MelissaCoppelBag.jpg" alt="" class="darken-img" />
+    <section class="termsConditionInfo">
+      <h1>Shipping and Delivery</h1>
+
+      <div class="chocolateDetailContainer">
+        <h2>
+          Chocolate Products will ship FedEx two(2) days standard Shipping.
+        </h2>
+        <p>
+          All chocolate boxes are shipped Monday through Wednesday. Any orders
+          placed in wendnesday after 3pm PST, Thursday, Friday or during the
+          weekend; will be shipped the foloowing Monday. You can track your
+          order using the tracking link from your shipping confirmation email
+          once it ships.
+        </p>
+      </div>
+      <div class="shippingDetailContainer">
+        <h2>Warm Weather Shipping</h2>
+        <p>
+          When shipping to warm destinations we use ice packs and insulated
+          packaging to ensure your chocolates arrive in excellent condition.
+          Please make an effort to notify the recipient that a sweet gift is on
+          its way so the package is not left outside in warm weather for too
+          long. PS: We ship all over the Continental US. We do not Ship to
+          Hawaii.
+        </p>
+      </div>
+      <div class="cancellationDetailContainer">
+        <h2>Cancellation Policy</h2>
+        <p>Shipping Orders cannot be canceled or returned.</p>
       </div>
     </section>
-
-    <!-- Form to fill up -->
-    <section class="customerPaymentInfo">
-      <section class="contactForm">
-        <h3>Contact</h3>
-        <input type="email" name="Email" id="Email" placeholder="Email" />
-      </section>
-
-      <section class="deliveryForm">
-        <h3>Delivery</h3>
-
-        <!-- Dropdown Menu -->
-        <label for="residingCountry"></label>
-        <select name="residingCountry" id="residingCountry">
-          <option value="us">United States</option>
-        </select>
-        <!-- End of Dropdown Menu -->
-        <div class="nameInfo">
-          <input type="text" name="fname" id="fname" placeholder="First Name" />
-          <input type="text" name="lname" id="lname" placeholder="Last Name" />
-        </div>
-
-        <input type="text" name="addr" id="addr" placeholder="Address" />
-
-        <div class="otherInfo">
-          <input
-            type="text"
-            name="postalCode"
-            id="postalCode"
-            placeholder="Postal Code"
-          />
-          <input
-            type="text"
-            name="phoneNo"
-            id="phoneNo"
-            placeholder="Phone Number"
-          />
-        </div>
-      </section>
-
-      <section class="paymentForm">
-        <h3>Payment</h3>
-        <input
-          type="text"
-          name="cardNo"
-          id="cardNo"
-          placeholder="Card Number"
-        />
-
-        <div class="expSec">
-          <input
-            type="date"
-            name="expDate"
-            id="expDate"
-            placeholder="Expiration Date"
-          />
-          <input
-            type="text"
-            name="secCode"
-            id="secCode"
-            placeholder="Security Code"
-          />
-        </div>
-
-        <input
-          type="text"
-          name="cardName"
-          id="cardName"
-          placeholder="Name on Card"
-        />
-      </section>
-
-      <button class="paymentBtn" type="submit">Pay Now</button>
-    </section>
-    <!-- End of Form to fill up -->
 
     <footer class="footer">
       <!-- First Section -->

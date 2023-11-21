@@ -19,7 +19,9 @@ const prodSection = document.createElement("section");
 prodSection.className = "prodSection";
 
 function makeProdCard(prodData) {
-  // Parent div
+  // Parent div and anchor tag
+  let aTag = document.createElement("a");
+  aTag.setAttribute("href", "productDetails.html");
   let prodCard = document.createElement("div");
   prodCard.className = "card";
 
@@ -45,9 +47,10 @@ function makeProdCard(prodData) {
   });
 
   // This is to add the child divs into the parent divs
-  prodCard.appendChild(image);
-  prodCard.appendChild(title);
-  prodCard.appendChild(price);
+  aTag.appendChild(image);
+  aTag.appendChild(title);
+  aTag.appendChild(price);
+  prodCard.appendChild(aTag);
   prodCard.appendChild(addCartBtn);
 
   // Add the data into the divs
@@ -56,7 +59,7 @@ function makeProdCard(prodData) {
   price.innerHTML = `$${prodData.price} (USD)`;
   addCartBtn.innerHTML = `<img src = "./Pictures/BagIconPlus.png">`;
 
-  // Append the prodCard to prodSection
+  // Append the aTag to prodSection
   prodSection.appendChild(prodCard);
 }
 
@@ -304,9 +307,9 @@ function DisplayCart(selectedProdList) {
       //Append the child to the parent itemCard
       itemImageContainer.appendChild(itemImg);
       itemDetailContainer.appendChild(itemTitle);
-      actionCount.appendChild(addItemBtnBag);
-      actionCount.appendChild(itemCount);
       actionCount.appendChild(delBtn);
+      actionCount.appendChild(itemCount);
+      actionCount.appendChild(addItemBtnBag);
       itemDetailContainer.appendChild(actionCount);
 
       itemCard.appendChild(itemImageContainer);
