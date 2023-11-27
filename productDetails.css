@@ -1,0 +1,57 @@
+.prodDetailContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  justify-content: space-evenly;
+}
+
+.prodDetailContainer .prodDetail {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.prodDetailContainer > img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 10px solid #fff;
+}
+
+.prodDetail h1 {
+  font-family: "Yeseva One", serif;
+  font-size: 1.6rem;
+}
+
+.prodDetail h2 {
+  font-family: "Yeseva One", serif;
+  font-size: 1.2rem;
+}
+
+.prodDetail .title h2 {
+  font-family: "Yeseva One", serif;
+  font-size: 1.4rem;
+}
+
+.prodDetail p {
+  font-size: 1.1rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.prodDetail .seperator {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  margin: 1em 0;
+}
+
+.prodDetailContainer button {
+  width: 70%;
+  padding: 0.8rem 0;
+  background-color: var(--cta-color);
+  font-family: "Yeseva One", serif;
+  color: #fff;
+  border-radius: 10px;
+  border-style: none;
+}
