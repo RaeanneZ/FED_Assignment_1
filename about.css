@@ -1,14 +1,8 @@
 /* About =============================================================================================================================================================== */
-#banner .Title {
-  font-size: 1.6em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .chocolateStory,
 .flavourStory {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -31,8 +25,9 @@
   margin-right: 5vw;
 }
 .chocolateStory .aboutImg {
-  top: 92%;
-  left: 10%;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
 }
 
 .flavourStory .desc {
@@ -40,8 +35,9 @@
   margin-left: 5vw;
 }
 .flavourStory .aboutImg {
-  top: 180%;
-  right: 10%;
+  top: 50%;
+  right: 2%;
+  transform: translate(-10%, -50%);
 }
 
 .desc {
@@ -52,10 +48,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .desc h3,
 .desc p {
+  margin-left: 0;
   width: 70%;
   font-size: 1.4em;
 }
@@ -74,4 +72,50 @@
 .flavourStory > .desc h3,
 .flavourStory > .desc p {
   margin-left: 50px;
+}
+
+/* Responsitivity ====================================================================================================================================================== */
+@media (max-width: 1096px) {
+  .desc h3,
+  .desc p {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  .desc h3 {
+    font-size: 2vw;
+  }
+
+  .desc p {
+    font-size: 1.4vw;
+  }
+}
+
+@media (max-width: 628px) {
+  .chocolateStory,
+  .flavourStory {
+    margin: 3rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .chocolateStory,
+  .flavourStory {
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .desc h3 {
+    font-size: 2.6vw;
+  }
+
+  .desc p {
+    font-size: 2vw;
+  }
+
+  .chocolateStory,
+  .flavourStory {
+    margin: 1.4rem;
+  }
 }

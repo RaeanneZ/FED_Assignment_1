@@ -57,7 +57,7 @@ function makeProdCard(prodData) {
   image.innerHTML = `<img src = "${prodData.imgSource}">`;
   title.innerHTML = prodData.title;
   price.innerHTML = `$${prodData.price} (USD)`;
-  addCartBtn.innerHTML = `<img src = "./Pictures/BagIconPlus.png">`;
+  addCartBtn.innerHTML = `<img src = "Pictures/AddIcon.png">`;
 
   // Append the aTag to prodSection
   prodSection.appendChild(prodCard);
@@ -142,6 +142,14 @@ makeProdCard(OreoBonbons);
 makeProdCard(PeachCompoteSesameGanacheBonBon);
 makeProdCard(StrawberryAltoelSolGanache);
 makeProdCard(PutumayoB);
+
+// ############################################################################################################################################################################
+
+// Update Cart immediately anytime
+// selectedProdList will have nested list with [[productVarName, productName, quantityCount]]
+let selectedProdList = JSON.parse(localStorage.getItem("data")) || [];
+DisplayCart(selectedProdList);
+
 // ############################################################################################################################################################################
 
 // Open bag
@@ -150,12 +158,6 @@ const popUp = document.querySelector(".pop-up"),
 
 bagIcon.addEventListener("click", () => {
   popUp.classList.toggle("active");
-
-  let itemRec = document.getElementsByClassName("itemCard")[0];
-  console.log(itemRec);
-  if (itemRec == null || itemRec == undefined) {
-    DisplayCart(selectedProdList);
-  }
 });
 
 // ######################################################################################################################################################################
@@ -194,7 +196,6 @@ function delCart(prodData) {
 // This is to track the what is in the cart right now and update list
 // Whatever selected should be saved, hence save selectedPordList to local storage
 // The OR [] part is to make sure if array is empty the code still works (null is returned if localStorage does not contain anything)
-let selectedProdList = JSON.parse(localStorage.getItem("data")) || [];
 const productName = 1;
 const quantityCount = 2;
 

@@ -75,10 +75,10 @@
 
 .addBtn img {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   right: 25px;
-  max-width: 25%;
-  max-height: 25%;
+  max-width: 15%;
+  max-height: 15%;
   object-fit: cover;
 }
 

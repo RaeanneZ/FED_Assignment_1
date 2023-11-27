@@ -1,3 +1,8 @@
+// Update Cart immediately anytime
+// selectedProdList will have nested list with [[productVarName, productName, quantityCount]]
+let selectedProdList = JSON.parse(localStorage.getItem("data")) || [];
+DisplayCart(selectedProdList);
+
 // Open bag
 const popUp = document.querySelector(".pop-up"),
   bagIcon = document.querySelector("#shoppingBagIcon");
