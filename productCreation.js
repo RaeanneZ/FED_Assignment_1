@@ -150,6 +150,12 @@ const popUp = document.querySelector(".pop-up"),
 
 bagIcon.addEventListener("click", () => {
   popUp.classList.toggle("active");
+
+  let itemRec = document.getElementsByClassName("itemCard")[0];
+  console.log(itemRec);
+  if (itemRec == null || itemRec == undefined) {
+    DisplayCart(selectedProdList);
+  }
 });
 
 // ######################################################################################################################################################################
@@ -167,13 +173,14 @@ function addFromCart(prodData) {
   // Update the list
   clearContent();
   CartTracker("addFromCart", prodData);
+
   DisplayCart(selectedProdList);
 }
 
 // ######################################################################################################################################################################
 
 // Delete from cart function
-// selectedProdList will have nested list with [[productName, quantityCount]]
+// SelectedProdList will have nested list with [[productName, quantityCount]]
 
 function delCart(prodData) {
   clearContent();
@@ -185,7 +192,9 @@ function delCart(prodData) {
 
 // selectedProdList will have nested list with [[productVarName, productName, quantityCount]]
 // This is to track the what is in the cart right now and update list
-let selectedProdList = [];
+// Whatever selected should be saved, hence save selectedPordList to local storage
+// The OR [] part is to make sure if array is empty the code still works (null is returned if localStorage does not contain anything)
+let selectedProdList = JSON.parse(localStorage.getItem("data")) || [];
 const productName = 1;
 const quantityCount = 2;
 
@@ -246,6 +255,9 @@ function CartTracker(action, prodData) {
     // End of FOR Loop
   }
   // End of ELSE Loop
+
+  // Local storage (Store Data into local storage)
+  localStorage.setItem("data", JSON.stringify(selectedProdList));
 }
 
 // ######################################################################################################################################################################
