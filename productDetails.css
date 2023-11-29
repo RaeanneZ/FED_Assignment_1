@@ -1,18 +1,18 @@
-.prodDetailContainer {
+#prodDetailContainer {
   display: flex;
   flex-direction: row;
   padding: 5rem;
   justify-content: space-evenly;
 }
 
-.prodDetailContainer .prodDetail {
+#prodDetailContainer .prodDetail {
   width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.prodDetailContainer > img {
+#prodDetailContainer > img {
   width: 400px;
   height: 400px;
   object-fit: cover;
@@ -46,7 +46,7 @@
   margin: 1em 0;
 }
 
-.prodDetailContainer button {
+#prodDetailContainer button {
   width: 70%;
   padding: 0.8rem 0;
   background-color: var(--cta-color);

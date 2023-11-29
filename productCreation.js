@@ -61,6 +61,9 @@ function makeProdCard(prodData) {
 
   // Append the aTag to prodSection
   prodSection.appendChild(prodCard);
+  prodCard.addEventListener("click", () => {
+    localStorage.setItem("selectedDetail", JSON.stringify(prodData));
+  });
 }
 
 // Append the Section into the body (outside func so "Make card" --> "Append to Section" --> "Write Section to HTML")
@@ -74,7 +77,7 @@ let SunsetBonbonSeries = {
   id: 1,
   imgSource: "Pictures/SunsetBonbonSeries.png",
   title: "Series: Sunset Bonbons 3 Pieces",
-  category: "BonBons",
+  ingredient: "Yuzu tart, Peppermint Cookie, Raspberry",
   price: 26,
 };
 
@@ -82,7 +85,7 @@ let BerrySwirlBonboSeries = {
   id: 2,
   imgSource: "Pictures/BerrySwirlBonboSeries.png",
   title: "Series: Berry Swirl Bonbons 3 Pieces",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 30,
 };
 
@@ -90,7 +93,7 @@ let VelvetBonBonSeries = {
   id: 3,
   imgSource: "Pictures/VelvetBonBonSeries.png",
   title: "Series: Velvet Bonbons 3 Pieces",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 30,
 };
 
@@ -98,7 +101,7 @@ let SaltyGiandujaSeries = {
   id: 4,
   imgSource: "Pictures/SaltyGiandujaSeries.png",
   title: "Series: Salty Gianduja Bonbons 3 Pieces",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 25,
 };
 
@@ -106,7 +109,7 @@ let OreoBonbons = {
   id: 5,
   imgSource: "Pictures/OreoBonbons.png",
   title: "Single: Oreo Praline Bonbon 1 Piece",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 3.8,
 };
 
@@ -114,7 +117,7 @@ let PeachCompoteSesameGanacheBonBon = {
   id: 6,
   imgSource: "Pictures/PeachCompoteSesameGanacheBonBon.png",
   title: "Single: Peach Compote Sesame Ganache Bonbon 1 Piece",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 3.5,
 };
 
@@ -122,7 +125,7 @@ let StrawberryAltoelSolGanache = {
   id: 7,
   imgSource: "Pictures/StrawberryAltoelSolGanache.png",
   title: "Single: Strawberry and Alto el Sol 65% Ganache Bonbon 1 Piece",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 4,
 };
 
@@ -130,7 +133,7 @@ let PutumayoB = {
   id: 8,
   imgSource: "Pictures/PutumayoB.png",
   title: "Single: PUTUMAYO Bouchée 1 Piece",
-  category: "Bonbons",
+  ingredient: "Bonbons",
   price: 3.2,
 };
 
