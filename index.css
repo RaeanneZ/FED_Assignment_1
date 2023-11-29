@@ -82,6 +82,8 @@
   width: 100vw;
   height: 100%;
   position: relative;
+  font-family: "Yeseva One", serif;
+  margin-bottom: 4em;
 }
 
 .list {
@@ -93,10 +95,34 @@
   width: 100vw;
   max-height: 100vh;
   object-fit: cover;
+  position: relative;
 }
 
 .list .item {
+  display: flex;
   max-width: 100vw;
+  position: relative;
+  display: none;
+}
+
+.list .item.active {
+  display: block;
+}
+
+.item .textContent {
+  width: 60%;
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.item .textContent p {
+  margin-bottom: 20px;
 }
 
 .buttons {
@@ -120,7 +146,7 @@
 .dots {
   position: absolute;
   bottom: 10px;
-  left: 0;
+  left: 40%;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -131,6 +157,15 @@
   width: 10px;
   height: 10px;
   background-color: #fff;
+  margin: 20px;
+  border-radius: 50%;
+}
+
+.dots li.active {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: var(--cta-color);
   margin: 20px;
   border-radius: 50%;
 }
