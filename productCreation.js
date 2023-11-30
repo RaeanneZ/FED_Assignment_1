@@ -93,7 +93,7 @@ let VelvetBonBonSeries = {
   id: 3,
   imgSource: "Pictures/VelvetBonBonSeries.png",
   title: "Series: Velvet Bonbons 3 Pieces",
-  ingredient: "Bonbons",
+  ingredient: "Vanilla Caramel Bitter Chocolate Ganache Bonbon",
   price: 30,
 };
 
@@ -101,7 +101,7 @@ let SaltyGiandujaSeries = {
   id: 4,
   imgSource: "Pictures/SaltyGiandujaSeries.png",
   title: "Series: Salty Gianduja Bonbons 3 Pieces",
-  ingredient: "Bonbons",
+  ingredient: "Hazelnut and Zephyr Caramel Ganache",
   price: 25,
 };
 
@@ -133,7 +133,7 @@ let PutumayoB = {
   id: 8,
   imgSource: "Pictures/PutumayoB.png",
   title: "Single: PUTUMAYO Bouchée 1 Piece",
-  ingredient: "Bonbons",
+  ingredient: "Coconut Caramel with Maria Cookie Crunch Bonbon",
   price: 3.2,
 };
 

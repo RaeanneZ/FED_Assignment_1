@@ -21,6 +21,19 @@
   border: 10px solid #fff;
 }
 
+.editQty {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.7em;
+}
+
+.editQty .itemCount {
+  max-width: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-family: "Yeseva One", serif;
+}
+
 .prodDetail h1 {
   font-family: "Yeseva One", serif;
   font-size: 1.6rem;
@@ -56,4 +69,8 @@
   color: #fff;
   border-radius: 10px;
   border-style: none;
+}
+
+.ingredient h2 {
+  margin-bottom: 15px;
 }

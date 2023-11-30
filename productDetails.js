@@ -28,6 +28,8 @@
 const productDetailContainer = document.getElementById("prodDetailContainer");
 const prodData = JSON.parse(localStorage.getItem("selectedDetail"));
 
+let itemCount = getQty(prodData, selectedProdList);
+
 // Creating Parent divs
 const prodDetail = document.createElement("div");
 prodDetail.className = "prodDetail";
@@ -48,6 +50,12 @@ function makeProdDetailPage(prodData) {
   let quantity = document.createElement("div");
   quantity.className = "quantity";
 
+  let editQty = document.createElement("div");
+  editQty.className = "editQty";
+
+  let addCartBtn = document.createElement("button");
+  addCartBtn.className = "addCart";
+
   //Creating Child2 (Parent is Child1)
 
   // For titleSect
@@ -61,8 +69,8 @@ function makeProdDetailPage(prodData) {
   // For quantity
   let quantityHeader = document.createElement("h2");
 
-  let itemCount = document.createElement("div");
-  itemCount.className = "itemCount";
+  let itemCountContainer = document.createElement("div");
+  itemCountContainer.className = "itemCount";
 
   let addItemBtnBag = document.createElement("div");
   addItemBtnBag.className = "addItemBtnBag";
@@ -70,20 +78,41 @@ function makeProdDetailPage(prodData) {
   let delBtn = document.createElement("div");
   delBtn.className = "delBtn";
 
+  addItemBtnBag.addEventListener("click", () => {
+    itemCount += 1;
+    itemCountContainer.innerHTML = itemCount;
+  });
+
+  delBtn.addEventListener("click", () => {
+    itemCount -= 1;
+    itemCountContainer.innerHTML = itemCount;
+  });
+
+  addCartBtn.addEventListener("click", () => {
+    console.log("Cart add");
+    setQty(prodData, selectedProdList);
+    setCart(prodData, itemCount);
+
+    clearContent();
+    DisplayCart(selectedProdList);
+  });
+
   // Append containers into parent
   titleSect.appendChild(prodName);
   titleSect.appendChild(price);
   ingredient.appendChild(ingredientHeader);
   ingredient.appendChild(ingredientDetail);
+  editQty.appendChild(delBtn);
+  editQty.appendChild(itemCountContainer);
+  editQty.appendChild(addItemBtnBag);
   quantity.appendChild(quantityHeader);
-  quantity.appendChild(delBtn);
-  quantity.appendChild(itemCount);
-  quantity.appendChild(addItemBtnBag);
+  quantity.appendChild(editQty);
 
   prodDetail.appendChild(titleSect);
   prodDetail.appendChild(seperator);
   prodDetail.appendChild(ingredient);
   prodDetail.appendChild(quantity);
+  prodDetail.appendChild(addCartBtn);
 
   // productDetailContainer.append(prodDetail);
 
@@ -94,9 +123,10 @@ function makeProdDetailPage(prodData) {
   ingredientHeader.innerHTML = "Bonbon flavors:";
   ingredientDetail.innerHTML = prodData.ingredient;
   quantityHeader.innerHTML = "Quantity: ";
-  itemCount.innerHTML = getQty(prodData, selectedProdList);
+  itemCountContainer.innerHTML = itemCount;
   delBtn.innerHTML = `<i class="fa-solid fa-minus"></i>`;
   addItemBtnBag.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+  addCartBtn.innerHTML = "Add To Cart";
 }
 
 makeProdDetailPage(prodData);
@@ -108,7 +138,7 @@ function getQty(prodData, selectedProdList) {
   const objIndex = 0;
   const qtyIndex = 2;
 
-  if (selectedProdList == []) {
+  if (selectedProdList.length == 0) {
     return 0;
   }
 
@@ -117,4 +147,31 @@ function getQty(prodData, selectedProdList) {
       return selectedProdList[i][qtyIndex];
     }
   }
+}
+
+function setQty(prodData, selectedProdList) {
+  const objIndex = 0;
+  const qtyIndex = 2;
+
+  if (selectedProdList.length == 0) {
+    return 0;
+  }
+
+  for (let i = 0; i < selectedProdList.length; i++) {
+    if (selectedProdList[i][objIndex].id == prodData.id) {
+      selectedProdList[i][qtyIndex] = itemCount;
+    }
+  }
+}
+
+function setCart(prodData, qty) {
+  for (let product of selectedProdList) {
+    //If there is a match
+    if (product[productName] == prodData.title) {
+      product[quantityCount] = qty;
+    }
+    // End of IF Loop
+  }
+
+  localStorage.setItem("data", JSON.stringify(selectedProdList));
 }
