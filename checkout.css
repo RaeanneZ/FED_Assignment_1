@@ -1,0 +1,80 @@
+.prodCheckoutListing {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.prodCheckoutListing hr {
+  width: 80%;
+  background-color: black;
+}
+
+.prodCheckoutListing h1 {
+  font-family: "Yeseva One", serif;
+}
+
+.prodCheckoutListing .checkoutBtn {
+  width: 30%;
+  padding: 0.8rem 0;
+  margin: 40px;
+  background-color: var(--cta-color);
+  font-family: "Yeseva One", serif;
+  color: #fff;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.itemRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.checkoutListBody {
+  width: 100%;
+}
+
+.bItemImageContainer,
+.bItemDetailContainer,
+.bItemActionCount,
+.totalPrice {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.bItemImageContainer {
+  max-width: 10%;
+  width: 10%;
+}
+
+.bItemDetailContainer {
+  max-width: 40%;
+  width: 40%;
+}
+
+.bItemActionCount {
+  width: 10%;
+  max-width: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.bItemActionCount .bItemCount {
+  max-width: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.bItemImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}

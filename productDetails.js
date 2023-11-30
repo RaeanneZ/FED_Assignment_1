@@ -89,7 +89,6 @@ function makeProdDetailPage(prodData) {
   });
 
   addCartBtn.addEventListener("click", () => {
-    console.log("Cart add");
     setQty(prodData, selectedProdList);
     setCart(prodData, itemCount);
 

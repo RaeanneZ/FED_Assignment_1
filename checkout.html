@@ -13,9 +13,10 @@
     />
     <link rel="stylesheet" href="Normalize.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="bonbons.css" />
-    <script src="productCreation.js" defer></script>
-    <title>Shop - Bonbons</title>
+    <link rel="stylesheet" href="checkout.css" />
+    <script src="displayBag.js" defer></script>
+    <script src="checkoutDisplay.js" defer></script>
+    <title>Checkout</title>
   </head>
   <body>
     <nav id="navbar">
@@ -44,21 +45,37 @@
     <section class="pop-up">
       <h3 class="bag">Bag</h3>
       <ul class="popUpList"></ul>
-      <a href="checkout.html"><button class="review-btn">Review Bag</button></a>
+      <a href="payment.html"><button class="review-btn">Review Bag</button></a>
     </section>
 
     <section id="banner">
       <div class="landingBanner">
-        <img src="Pictures/trayofBonbons.png" alt="" class="darken-img" />
+        <img src="Pictures/MelissaCoppelBag.jpg" alt="" class="darken-img" />
       </div>
 
       <div class="Title">
-        <h2>Bon Bons</h2>
+        <h2>Checkout</h2>
       </div>
     </section>
 
-    <!-- This is written over to from JS -->
-    <section id="product"></section>
+    <!-- This is to render the body -->
+    <section class="prodCheckoutListing">
+      <h1>Bag</h1>
+
+      <div id="checkoutHeader"></div>
+      <hr />
+
+      <div id="checkoutListBody">
+        <ul id="orderList"></ul>
+      </div>
+
+      <hr />
+      <div class="totalCostDisplay"></div>
+      <button class="checkoutBtn" type="button">
+        Checkout <i class="fa-solid fa-angles-right"></i>
+      </button>
+    </section>
+    <!-- This is to render the body -->
 
     <footer class="footer">
       <!-- First Section -->
