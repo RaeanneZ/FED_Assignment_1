@@ -26,16 +26,15 @@
 
 // Re-create the html file
 const productDetailContainer = document.getElementById("prodDetailContainer");
-let prodData = JSON.parse(localStorage.getItem("selectedDetail"));
-makeProdDetailPage(prodData);
+const prodData = JSON.parse(localStorage.getItem("selectedDetail"));
+
+// Creating Parent divs
+const prodDetail = document.createElement("div");
+prodDetail.className = "prodDetail";
+const prodImg = document.createElement("div");
+prodImg.className = "image";
 
 function makeProdDetailPage(prodData) {
-  let prodImg = document.createElement("img");
-
-  // Creating Parent divs
-  let prodDetail = document.createElement("div");
-  prodDetail.className = "prodDetail";
-
   // Creating Child1 div
   let titleSect = document.createElement("div");
   titleSect.className = "title";
@@ -82,18 +81,23 @@ function makeProdDetailPage(prodData) {
   quantity.appendChild(addItemBtnBag);
 
   prodDetail.appendChild(titleSect);
+  prodDetail.appendChild(seperator);
   prodDetail.appendChild(ingredient);
   prodDetail.appendChild(quantity);
 
-  productDetailContainer.append(prodDetail);
+  // productDetailContainer.append(prodDetail);
 
   // Write data into containers
   prodImg.innerHTML = `<img src = "${prodData.imgSource}">`;
   prodName.innerHTML = prodData.title;
-  price.innerHTML = prodData.price;
+  price.innerHTML = `${prodData.price} (USD)`;
   ingredientHeader.innerHTML = "Bonbon flavors:";
   ingredientDetail.innerHTML = prodData.ingredient;
-  quantityHeader.innerHTML = "Quantity";
+  quantityHeader.innerHTML = "Quantity: ";
   delBtn.innerHTML = `<i class="fa-solid fa-minus"></i>`;
   addItemBtnBag.innerHTML = `<i class="fa-solid fa-plus"></i>`;
 }
+
+makeProdDetailPage(prodData);
+productDetailContainer.insertAdjacentElement("afterbegin", prodDetail);
+productDetailContainer.insertAdjacentElement("afterbegin", prodImg);

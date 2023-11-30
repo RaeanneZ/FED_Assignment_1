@@ -1,5 +1,5 @@
 let slides = document.querySelectorAll(".item");
-let dots = document.querySelectorAll("li");
+let dots = document.querySelectorAll(".dot");
 let index = 0;
 
 function next() {
