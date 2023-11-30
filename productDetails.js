@@ -90,10 +90,11 @@ function makeProdDetailPage(prodData) {
   // Write data into containers
   prodImg.innerHTML = `<img src = "${prodData.imgSource}">`;
   prodName.innerHTML = prodData.title;
-  price.innerHTML = `${prodData.price} (USD)`;
+  price.innerHTML = `$ ${prodData.price} (USD)`;
   ingredientHeader.innerHTML = "Bonbon flavors:";
   ingredientDetail.innerHTML = prodData.ingredient;
   quantityHeader.innerHTML = "Quantity: ";
+  itemCount.innerHTML = getQty(prodData, selectedProdList);
   delBtn.innerHTML = `<i class="fa-solid fa-minus"></i>`;
   addItemBtnBag.innerHTML = `<i class="fa-solid fa-plus"></i>`;
 }
@@ -101,3 +102,19 @@ function makeProdDetailPage(prodData) {
 makeProdDetailPage(prodData);
 productDetailContainer.insertAdjacentElement("afterbegin", prodDetail);
 productDetailContainer.insertAdjacentElement("afterbegin", prodImg);
+
+// Set Quantity =========================================================================================================================================================
+function getQty(prodData, selectedProdList) {
+  const objIndex = 0;
+  const qtyIndex = 2;
+
+  if (selectedProdList == []) {
+    return 0;
+  }
+
+  for (let i = 0; i < selectedProdList.length; i++) {
+    if ((selectedProdList[i][objIndex].id = prodData.id)) {
+      return selectedProdList[i][qtyIndex];
+    }
+  }
+}
