@@ -1,11 +1,15 @@
 // Create the UI for the list
 
 const orderList = document.getElementById("orderList");
+const subTotalDisplay = document.getElementById("subTotalDisplay");
 
 function prodListRender() {
   for (let product = 0; product < selectedProdList.length; product++) {
     const prodObj = selectedProdList[product][0];
     let prodQtySelected = selectedProdList[product][2];
+
+    let subTotal = document.createElement("div");
+    subTotal.className = "subTotal";
 
     let itemRow = document.createElement("li");
     itemRow.className = "itemRow";
@@ -85,6 +89,7 @@ function prodListRender() {
     itemRow.appendChild(totalPrice);
 
     orderList.appendChild(itemRow);
+    subTotalDisplay.appendChild(subTotal);
 
     bItemImg.src = prodObj.imgSource;
     bItemTitle.innerHTML = prodObj.title;
@@ -92,13 +97,21 @@ function prodListRender() {
     bItemCountContainer.innerHTML = prodQtySelected;
     delBtn.innerHTML = `<i class="fa-solid fa-minus"></i>`;
     addItemBtnBag.innerHTML = `<i class="fa-solid fa-plus"></i>`;
-    totalPrice.innerHTML = getTotalPrice(prodObj, prodQtySelected); //update price display
+    totalPrice.innerHTML = `$${getTotalPrice(prodObj, prodQtySelected)} (USD)`; //update price display
+    subTotal.innerHTML = `Total: $${getSubTotal()}`;
   }
 }
 
 function getTotalPrice(prodObj, prodQtySelected) {
-  let totalPrice = prodObj.price * prodQtySelected;
-  return `$${totalPrice} (USD)`;
+  return prodObj.price * prodQtySelected;
+}
+
+function getSubTotal() {
+  let subTotal = 0;
+  for (let product of selectedProdList) {
+    subTotal += product[0].price * product[2];
+  }
+  return subTotal;
 }
 
 function removeProd(prodObj) {
@@ -119,7 +132,15 @@ function updateLocalStorage(prodData, qty) {
 
 function RefreshCheckoutBag() {
   orderList.innerHTML = "";
+  subTotalDisplay.innerHTML = "";
   prodListRender();
+  getSubTotal();
 }
 
 prodListRender();
+
+// window.onstorage = (event) => {
+//   if (event.key === "data") {
+//     console.log("DATA UPDATE");
+//   }
+// };

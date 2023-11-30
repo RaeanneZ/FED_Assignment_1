@@ -203,6 +203,10 @@ function CartTracker(action, prodData) {
 
   // Local storage (Store Data into local storage)
   localStorage.setItem("data", JSON.stringify(selectedProdList));
+
+  if (typeof RefreshCheckoutBag === "function") {
+    RefreshCheckoutBag();
+  }
 }
 
 // ######################################################################################################################################################################
