@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.customerPaymentInfo h3 {
+  font-size: 2em;
+}
+
 .contactForm,
 .deliveryForm,
 .paymentForm {
@@ -16,8 +20,34 @@
   margin: 2em;
 }
 
-.customerPaymentInfo h3 {
-  font-size: 2em;
+.deliveryForm .nameInfo,
+.deliveryForm .otherInfo,
+.paymentForm .expSec {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.nameInfo {
+  width: 100%;
+}
+.nameInfo input {
+  width: 50%;
+}
+
+.otherInfo {
+  width: 100%;
+}
+.otherInfo input {
+  width: 50%;
+}
+
+.expSec {
+  width: 100%;
+}
+.expSec input {
+  width: 50%;
 }
 
 .customerPaymentInfo input,
@@ -41,15 +71,6 @@
   width: 100%;
 }
 
-.deliveryForm .nameInfo,
-.deliveryForm .otherInfo,
-.paymentForm .expSec {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
-}
-
 .paymentBtn {
   width: 45%;
   background-color: #8c182d;
@@ -60,6 +81,22 @@
   border-radius: 15px;
   border-style: none;
   stroke: none;
+}
+
+input.error {
+  border-color: red;
+}
+input.success {
+  border-color: green;
+}
+
+input.error ::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+input.error ::-ms-input-placeholder {
+  /* Edge 12-18 */
+  color: red;
 }
 
 /* Responsivity ======================================================================================================================================================== */
