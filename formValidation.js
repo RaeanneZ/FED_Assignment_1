@@ -51,34 +51,29 @@ function validateInput() {
     setSuccess(email);
   }
 
-  if (postalCode === "") {
+  if (postalCodeValue === "") {
     setError(postalCode, "Postal Code is required");
-  } else if (!isValidNumber(postalCodeValue) || postalCodeValue.length != 5) {
+  } else if (isNaN(Number(postalCodeValue)) || postalCodeValue.length != 5) {
     setError(postalCode, "Please enter valid US Postal Code");
   } else {
     setSuccess(postalCode);
   }
 
-  if (phoneNo === "") {
+  if (phoneNoValue === "") {
     setError(phoneNo, "Phone number is required to verify order and delivery");
-  } else if (!isValidNumber(phoneNoValue)) {
+  } else if (isNaN(Number(phoneNoValue))) {
     setError(phoneNo, "Please enter phone number");
   } else {
     setSuccess(phoneNo);
   }
 
-  if (cardNo === "") {
+  if (cardNoValue === "") {
     setError(cardNo, "Card number");
-  } else if (!isValidNumber(cardNoValue) || cardNoValue.length != 16) {
+  } else if (isNaN(Number(cardNoValue)) || cardNoValue.length != 16) {
     setError(cardNo, "Invalid Card Number");
   } else {
     setSuccess(cardNo);
   }
-}
-
-function isValidNumber(inputString) {
-  var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-  return re.test(inputString);
 }
 
 function isValidEmail(email) {

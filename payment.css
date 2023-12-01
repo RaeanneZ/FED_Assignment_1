@@ -71,8 +71,12 @@
   width: 100%;
 }
 
-.paymentBtn {
+.paymentLinkContainer {
   width: 45%;
+}
+
+.paymentBtn {
+  width: 100%;
   background-color: #8c182d;
   color: #ffffff;
   font-family: "Yeseva One", serif;

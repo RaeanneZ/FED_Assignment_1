@@ -13,12 +13,12 @@
     />
     <link rel="stylesheet" href="Normalize.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="payment.css" />
+    <link rel="stylesheet" href="successfulOrderPage.css" />
     <script src="displayBag.js" defer></script>
-    <script src="formValidation.js" defer></script>
-    <title>Payment</title>
+    <title>Document</title>
   </head>
   <body>
+    <!-- Navbar ########################################################################################################################################################## -->
     <nav id="navbar">
       <a href="index.html" class="logo">
         <h1>Melissa Coppel</h1>
@@ -48,107 +48,19 @@
       <a href="payment.html"><button class="review-btn">Review Bag</button></a>
     </section>
 
-    <section id="banner">
-      <div class="landingBanner">
-        <img src="Pictures/MelissaCoppelBag.jpg" alt="" class="darken-img" />
-      </div>
+    <!-- Prompt Display ################################################################################################################################################## -->
+
+    <section class="successfulPrompt">
+      <h1>Thank you for shopping with us!</h1>
+      <p>
+        An email containing your order details will be sent to you within 3
+        working days.
+      </p>
+      <a href="bonbons.html">
+        <button type="button">Continue Shopping</button>
+      </a>
     </section>
-
-    <!-- Form ########################################################################################################################### -->
-    <form action="/" id="form">
-      <!-- Form to fill up -->
-      <section class="customerPaymentInfo">
-        <section class="contactForm">
-          <h3>Contact</h3>
-          <input type="text" name="Email" id="Email" placeholder="Email" />
-        </section>
-
-        <section class="deliveryForm">
-          <h3>Delivery</h3>
-
-          <!-- Dropdown Menu -->
-          <label for="residingCountry"></label>
-          <select name="residingCountry" id="residingCountry">
-            <option value="us">United States</option>
-          </select>
-          <!-- End of Dropdown Menu -->
-          <div class="nameInfo">
-            <input
-              type="text"
-              name="fname"
-              id="fname"
-              placeholder="First Name"
-            />
-
-            <input
-              type="text"
-              name="lname"
-              id="lname"
-              placeholder="Last Name"
-            />
-          </div>
-
-          <input type="text" name="addr" id="addr" placeholder="Address" />
-
-          <div class="otherInfo">
-            <input
-              type="text"
-              name="postalCode"
-              id="postalCode"
-              placeholder="Postal Code"
-            />
-
-            <input
-              type="text"
-              name="phoneNo"
-              id="phoneNo"
-              placeholder="Phone Number"
-            />
-          </div>
-        </section>
-
-        <section class="paymentForm">
-          <h3>Payment</h3>
-
-          <input
-            type="text"
-            name="cardNo"
-            id="cardNo"
-            placeholder="Card Number"
-          />
-
-          <div class="expSec">
-            <input
-              type="date"
-              name="expDate"
-              id="expDate"
-              placeholder="Expiration Date"
-            />
-
-            <input
-              type="text"
-              name="secCode"
-              id="secCode"
-              placeholder="Security Code"
-            />
-          </div>
-
-          <input
-            type="text"
-            name="cardName"
-            id="cardName"
-            placeholder="Name on Card"
-          />
-        </section>
-
-        <a class="paymentLinkContainer" href="successfulOrderPage.html">
-          <button class="paymentBtn" type="submit">Pay Now</button>
-        </a>
-      </section>
-      <!-- End of Form to fill up -->
-    </form>
-    <!-- Form ########################################################################################################################### -->
-
+    <!-- Footer ########################################################################################################################################################## -->
     <footer class="footer">
       <!-- First Section -->
       <section class="footer-container">
@@ -214,5 +126,10 @@
         </div>
       </section>
     </footer>
+
+    <!-- Script to clear previous session -->
+    <script>
+      localStorage.clear();
+    </script>
   </body>
 </html>

@@ -1,0 +1,23 @@
+.successfulPrompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.successfulPrompt p {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.successfulPrompt button {
+  width: 100%;
+  background-color: #8c182d;
+  color: #ffffff;
+  font-family: "Yeseva One", serif;
+  padding: 1.2em 2em;
+  margin-top: 1.5em;
+  border-radius: 15px;
+  border-style: none;
+  stroke: none;
+}
