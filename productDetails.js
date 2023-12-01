@@ -84,8 +84,10 @@ function makeProdDetailPage(prodData) {
   });
 
   delBtn.addEventListener("click", () => {
-    itemCount -= 1;
-    itemCountContainer.innerHTML = itemCount;
+    if (itemCount > 0) {
+      itemCount -= 1;
+      itemCountContainer.innerHTML = itemCount;
+    }
   });
 
   addCartBtn.addEventListener("click", () => {
@@ -136,6 +138,7 @@ productDetailContainer.insertAdjacentElement("afterbegin", prodImg);
 function getQty(prodData, selectedProdList) {
   const objIndex = 0;
   const qtyIndex = 2;
+  let hasQty = false;
 
   if (selectedProdList.length == 0) {
     return 0;
@@ -144,7 +147,12 @@ function getQty(prodData, selectedProdList) {
   for (let i = 0; i < selectedProdList.length; i++) {
     if (selectedProdList[i][objIndex].id == prodData.id) {
       return selectedProdList[i][qtyIndex];
+      hasQty = true;
     }
+  }
+
+  if (!hasQty) {
+    return 0;
   }
 }
 
@@ -164,12 +172,19 @@ function setQty(prodData, selectedProdList) {
 }
 
 function setCart(prodData, qty) {
+  let isExist = false;
+
   for (let product of selectedProdList) {
     //If there is a match
     if (product[productName] == prodData.title) {
       product[quantityCount] = qty;
+      isExist = true;
     }
     // End of IF Loop
+  }
+
+  if (!isExist) {
+    selectedProdList.push([prodData, prodData.title, qty]);
   }
 
   localStorage.setItem("data", JSON.stringify(selectedProdList));

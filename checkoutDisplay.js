@@ -63,7 +63,9 @@ function prodListRender() {
 
     delBtn.addEventListener("click", () => {
       //Index of selectedProdList
-      prodQtySelected -= 1;
+      if (prodQtySelected > 0) {
+        prodQtySelected -= 1;
+      }
 
       if (prodQtySelected == 0) {
         removeProd(prodObj);
@@ -113,7 +115,7 @@ function subTotalRender() {
 }
 
 function getTotalPrice(prodObj, prodQtySelected) {
-  return prodObj.price * prodQtySelected;
+  return (prodObj.price * prodQtySelected).toFixed(2);
 }
 
 function getSubTotal() {
@@ -145,6 +147,7 @@ function RefreshCheckoutBag() {
   subTotalDisplay.removeChild(subTotalDisplay.firstChild);
   prodListRender();
   getSubTotal();
+  subTotalRender();
 }
 
 subTotalRender();
