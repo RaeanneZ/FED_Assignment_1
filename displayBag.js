@@ -204,6 +204,7 @@ function CartTracker(action, prodData) {
   // Local storage (Store Data into local storage)
   localStorage.setItem("data", JSON.stringify(selectedProdList));
 
+  // This is to ensure at all other pages, the JS will not run into error when function does not exists
   if (typeof RefreshCheckoutBag === "function") {
     RefreshCheckoutBag();
   }

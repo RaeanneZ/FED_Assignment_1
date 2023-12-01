@@ -22,6 +22,9 @@ function prodListRender() {
     let bItemDetailContainer = document.createElement("div");
     bItemDetailContainer.className = "bItemDetailContainer";
 
+    let bItemTitlePrice = document.createElement("div");
+    bItemTitlePrice.className = "bItemTitlePrice";
+
     let totalPrice = document.createElement("div");
     totalPrice.className = "totalPrice";
 
@@ -76,17 +79,20 @@ function prodListRender() {
 
     //Append the child to the parent itemCard
     bItemImageContainer.appendChild(bItemImg);
-    bItemDetailContainer.appendChild(bItemTitle);
-    bItemDetailContainer.appendChild(bItemPrice);
+    bItemTitlePrice.appendChild(bItemTitle);
+    bItemTitlePrice.appendChild(bItemPrice);
 
     bItemActionCount.appendChild(delBtn);
     bItemActionCount.appendChild(bItemCountContainer);
     bItemActionCount.appendChild(addItemBtnBag);
 
+    bItemDetailContainer.appendChild(bItemTitlePrice);
+    bItemDetailContainer.appendChild(bItemActionCount);
+    bItemDetailContainer.appendChild(totalPrice);
+
     itemRow.appendChild(bItemImageContainer);
     itemRow.appendChild(bItemDetailContainer);
-    itemRow.appendChild(bItemActionCount);
-    itemRow.appendChild(totalPrice);
+    // itemRow.appendChild(totalPrice);
 
     orderList.appendChild(itemRow);
     subTotalDisplay.appendChild(subTotal);
@@ -138,9 +144,3 @@ function RefreshCheckoutBag() {
 }
 
 prodListRender();
-
-// window.onstorage = (event) => {
-//   if (event.key === "data") {
-//     console.log("DATA UPDATE");
-//   }
-// };
