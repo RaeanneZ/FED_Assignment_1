@@ -57,7 +57,13 @@
     <section class="customerPaymentInfo">
       <section class="contactForm">
         <h3>Contact</h3>
-        <input type="email" name="Email" id="Email" placeholder="Email" />
+        <input
+          type="email"
+          name="Email"
+          id="Email"
+          required
+          placeholder="Email"
+        />
       </section>
 
       <section class="deliveryForm">
@@ -70,23 +76,43 @@
         </select>
         <!-- End of Dropdown Menu -->
         <div class="nameInfo">
-          <input type="text" name="fname" id="fname" placeholder="First Name" />
-          <input type="text" name="lname" id="lname" placeholder="Last Name" />
+          <input
+            type="text"
+            name="fname"
+            id="fname"
+            required
+            placeholder="First Name"
+          />
+          <input
+            type="text"
+            name="lname"
+            id="lname"
+            required
+            placeholder="Last Name"
+          />
         </div>
 
-        <input type="text" name="addr" id="addr" placeholder="Address" />
+        <input
+          type="text"
+          name="addr"
+          id="addr"
+          required
+          placeholder="Address"
+        />
 
         <div class="otherInfo">
           <input
             type="text"
             name="postalCode"
             id="postalCode"
+            required
             placeholder="Postal Code"
           />
           <input
             type="text"
             name="phoneNo"
             id="phoneNo"
+            required
             placeholder="Phone Number"
           />
         </div>
@@ -98,6 +124,7 @@
           type="text"
           name="cardNo"
           id="cardNo"
+          required
           placeholder="Card Number"
         />
 
@@ -106,12 +133,14 @@
             type="date"
             name="expDate"
             id="expDate"
+            required
             placeholder="Expiration Date"
           />
           <input
             type="text"
             name="secCode"
             id="secCode"
+            required
             placeholder="Security Code"
           />
         </div>
@@ -120,6 +149,7 @@
           type="text"
           name="cardName"
           id="cardName"
+          required
           placeholder="Name on Card"
         />
       </section>

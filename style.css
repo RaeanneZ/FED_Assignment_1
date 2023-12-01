@@ -415,6 +415,7 @@ ul {
 
   #banner {
     font-size: 4vw;
+    position: relative;
   }
   .captionCta {
     position: absolute;
@@ -424,7 +425,7 @@ ul {
   .captionCta button {
     position: absolute;
     background-color: #8c182d;
-    padding: 4vw 4vw;
+    padding: 3vw 3vw;
     margin-top: 2em;
     border-radius: 15px;
     border-style: none;
