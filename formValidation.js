@@ -6,11 +6,19 @@ const lname = document.getElementById("lname");
 const postalCode = document.getElementById("postalCode");
 const phoneNo = document.getElementById("phoneNo");
 const cardNo = document.getElementById("cardNo");
+const expDate = document.getElementById("expDate");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validateInput();
 });
+
+// Ensure expiration date is not earlier than the next day
+let today = new Date();
+today = new Date(today.setDate(today.getDate() + 1))
+  .toISOString()
+  .split("T")[0];
+expDate.setAttribute("min", today);
 
 function validateInput() {
   const emailValue = email.value.trim();
@@ -19,14 +27,17 @@ function validateInput() {
   const postalCodeValue = postalCode.value.trim();
   const phoneNoValue = phoneNo.value.trim();
   const cardNoValue = cardNo.value.trim();
+  const expDateValue = expDate.value; // YYYY-MM-DD
 
-  if (fname === "") {
+  console.log(expDateValue);
+
+  if (fNameValue === "") {
     setError(fname, "First Name is required");
   } else {
     setSuccess(fname);
   }
 
-  if (lname === "") {
+  if (lNameValue === "") {
     setError(lname, "Last Name is required");
   } else {
     setSuccess(lname);
@@ -57,9 +68,9 @@ function validateInput() {
   }
 
   if (cardNo === "") {
-    setError(cardNo, "Please enter card number");
+    setError(cardNo, "Card number");
   } else if (!isValidNumber(cardNoValue) || cardNoValue.length != 16) {
-    setError(cardNo, "Card Number must be 16 digits");
+    setError(cardNo, "Invalid Card Number");
   } else {
     setSuccess(cardNo);
   }

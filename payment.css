@@ -90,11 +90,11 @@ input.success {
   border-color: green;
 }
 
-input.error ::placeholder {
+input.error::placeholder {
   color: red;
   opacity: 1; /* Firefox */
 }
-input.error ::-ms-input-placeholder {
+input.error::-ms-input-placeholder {
   /* Edge 12-18 */
   color: red;
 }
