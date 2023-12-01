@@ -52,6 +52,7 @@
 }
 
 .MC-profileContainer {
+  margin: 2em;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -191,5 +192,40 @@
     padding-top: 2em;
     padding-left: 10px;
     font-family: "Josefin Sans", sans-serif;
+  }
+}
+
+@media (max-width: 712px) {
+  .slidingCarousel {
+    width: 100vw;
+    height: 200px;
+    font-size: 12px;
+  }
+
+  .list img {
+    width: 100vw;
+    height: 200px;
+    max-height: 200px;
+  }
+
+  .item .textContent {
+    width: 40%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 20%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
   }
 }
