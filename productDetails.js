@@ -142,7 +142,7 @@ function getQty(prodData, selectedProdList) {
   }
 
   for (let i = 0; i < selectedProdList.length; i++) {
-    if ((selectedProdList[i][objIndex].id = prodData.id)) {
+    if (selectedProdList[i][objIndex].id == prodData.id) {
       return selectedProdList[i][qtyIndex];
     }
   }
