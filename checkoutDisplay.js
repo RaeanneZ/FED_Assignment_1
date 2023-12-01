@@ -3,13 +3,13 @@
 const orderList = document.getElementById("orderList");
 const subTotalDisplay = document.getElementById("subTotalDisplay");
 
+let subTotal = document.createElement("div");
+subTotal.className = "subTotal";
+
 function prodListRender() {
   for (let product = 0; product < selectedProdList.length; product++) {
     const prodObj = selectedProdList[product][0];
     let prodQtySelected = selectedProdList[product][2];
-
-    let subTotal = document.createElement("div");
-    subTotal.className = "subTotal";
 
     let itemRow = document.createElement("li");
     itemRow.className = "itemRow";
@@ -95,7 +95,6 @@ function prodListRender() {
     // itemRow.appendChild(totalPrice);
 
     orderList.appendChild(itemRow);
-    subTotalDisplay.appendChild(subTotal);
 
     bItemImg.src = prodObj.imgSource;
     bItemTitle.innerHTML = prodObj.title;
@@ -106,6 +105,11 @@ function prodListRender() {
     totalPrice.innerHTML = `$${getTotalPrice(prodObj, prodQtySelected)} (USD)`; //update price display
     subTotal.innerHTML = `Total: $${getSubTotal()}`;
   }
+}
+
+function subTotalRender() {
+  subTotalDisplay.appendChild(subTotal);
+  subTotal.innerHTML = `Total: $${getSubTotal()}`;
 }
 
 function getTotalPrice(prodObj, prodQtySelected) {
@@ -138,9 +142,10 @@ function updateLocalStorage(prodData, qty) {
 
 function RefreshCheckoutBag() {
   orderList.innerHTML = "";
-  subTotalDisplay.innerHTML = "";
+  subTotalDisplay.removeChild(subTotalDisplay.firstChild);
   prodListRender();
   getSubTotal();
 }
 
+subTotalRender();
 prodListRender();
